@@ -1,0 +1,72 @@
+<div class="bottom">
+    <div class="text white">
+        <span class="icon-forest "></span>&nbsp;Create New Forest
+    </div>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-container white" novalidate>
+        <div class="outer">
+            <div class="container-fluid ">
+                <table class="table borderless">
+                    <tbody>
+                        <tr class="set_margn">
+                            <td class="row_width">
+                                <div class="select adjustment"><label class="lbl"> Forest: </label></div>
+                            </td>
+                            <td><input type="text" [(ngModel)]="forestName" name="forestName" placeholder="Forest name" style="width: 400px;"></td>
+                        </tr>
+                        <tr class="set_margn">
+                            <td>
+                                <div class="select adjustment"><label class="lbl"> Host: </label></div>
+                            </td>
+                            <td>
+                                <md-select [(ngModel)]="host" name="host">
+                                    <md-option *ngFor="let db of dbList" [value]="db.name">{{db.name}}</md-option>
+                                </md-select>
+                            </td>
+                        </tr>
+                        <tr class="set_margn">
+                            <td style="width:12%;">
+                                <div class="select adjustment"><label class="lbl">Data Directory: </label></div>
+                            </td>
+                            <td><input type="text" [(ngModel)]="dbName" name="name" placeholder="" style="width: 400px;"></td>
+                        </tr>
+                        <tr class="set_margn">
+                            <td style="width:12%;">
+                                <div class="select adjustment"><label class="lbl"> Large Data Directory:  </label></div>
+                            </td>
+                            <td><input type="text" [(ngModel)]="directory" name="directory" placeholder="" style="width: 400px;"></td>
+                        </tr>
+
+                        <tr class="set_margn" id="demo" class="collapse">
+                            <td>
+                                <div class="select adjustment"><label class="lbl"> Fast Data Directory:  </label></div>
+                            </td>
+                            <td>
+                                <md-select>
+                                    <md-option *ngFor="let db of dbList" [value]="db.name">{{db.name}}</md-option>
+                                </md-select>
+                            </td>
+                        </tr>
+                        <tr class="set_margn" id="demo1" class="collapse">
+                            <td>
+                                <div class="select adjustment"><label class="lbl"> Fast Data Max Size: </label></div>
+                            </td>
+                            <td>
+                                <md-select>
+                                    <md-option *ngFor="let db of dbList" [value]="db.name">{{db.name}}</md-option>
+                                </md-select>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div class="row alignment">
+                    <div class="col-sm-12 moreless_btn" data-toggle="collapse" data-target="#demo,#demo1" (click)="toggleContent()">{{content}}</div>
+                </div>
+            </div>
+            <div class="move">
+                <a md-button class="cancel_btn" routerLink="/database">Cancel</a>
+                <a md-button class="create_btn" (click)="createForest()">Create</a>
+            </div>
+        </div>
+    </form>
+    <div>

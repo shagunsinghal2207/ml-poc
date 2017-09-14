@@ -1,0 +1,52 @@
+.menu-icon {
+    font-size: 24px;
+}
+
+.menu-text {
+    margin-left: 10px;
+}
+
+#sidebar {
+    position: relative;
+    overflow: hidden;
+    color: #C2142E;
+    background-color: #333333;
+}
+
+#sidebar a:hover {
+    background-color: #020102;
+}
+
+#sidebar.expended {
+    min-width: 175px;
+}
+
+#sidebar .list-group-item {
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}
+
+.list-group-item {
+    background: #333333;
+    color: #C2142E;
+}
+
+.navigation a:hover {
+    background-color: #020102;
+}
+
+.navigation a {
+    color: #fff;
+}
+
+.navigation.active a {
+    color: #fff;
+    background-color: #C2142E !important;
+}
+
+.navigation a:focus {
+    background: #C2142E !important;
+    color: #fff;
+}

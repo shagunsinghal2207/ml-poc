@@ -1,0 +1,99 @@
+.bottom{
+    margin-bottom: 15px;
+}
+.text {
+    padding: 20px 20px 10px 20px;
+    line-height: 30px;
+    font-family: Helvetica Neue, sans-serif;
+    font-size: 18px;
+}
+
+.icon-forest{
+    font-size: 24px;
+}
+
+.textarea{
+    margin-bottom: 18px!important;
+}
+
+.select {
+    margin-bottom: 25px;
+    margin-left: 30px;
+    }
+
+.item {
+       flex-direction: column;
+   -webkit-justify-content: flex-start;
+   justify-content: flex-start;
+}
+ 
+.container-fluid {
+    border-radius: 5px;
+    border: 1px solid #DFDEDF;
+}
+
+.outer{
+    padding:15px 15px 60px 15px;
+    background: white;
+   }
+.form-container {
+        border: 0px solid grey;
+}
+.move {
+    float:right;
+    display:block;
+    clear:left;
+    margin-top: 15px;
+}
+
+.alignment{
+    margin-bottom: 0px;
+    background-color: #DFDEDF;
+    text-align: center;
+    font-weight: 600;
+}
+
+.create_btn{
+    margin-left: 10px;
+  text-decoration: none;
+   background: #DF5D26;
+   color: white;
+   border-radius: 5px;
+ }
+
+ .cancel_btn{
+     color:white;
+     background:#AAA6A9;
+      text-decoration: none;
+      border-radius: 5px;
+ }
+
+ .moreless_btn{
+ cursor: pointer
+ }
+
+  .borderless tr td {
+    border: none !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.lbl{
+  
+    padding-top: 15px;
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.adjustment{
+    text-align: right;padding-right:15px;margin-bottom:0px
+}
+
+.set_margn{
+    margin-bottom: 0px;
+}
+
+.row_width{
+    width:14%;
+}

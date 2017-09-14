@@ -1,0 +1,77 @@
+<div class="bottom">
+    <div class="text white">
+        <span class="icon-Database"></span>&nbsp;Create New Database
+    </div>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-container" name="create-db" novalidate>
+        <div class="outer">
+            <div class="container-fluid">
+                <table class="table borderless">
+                    <tbody>
+                        <tr class="set_margn">
+                            <td class="row_width" >
+                                <div class="select adjustment"><label class="select adjustment lbl"> Name: </label></div>
+                            </td>
+                            <td><input type="text" [(ngModel)]="dbName" name="name" placeholder="Type name" style="width: 400px;"></td>
+                        </tr>
+                        <tr class="set_margn">
+                            <td>
+                                <div class="select adjustment"><label class="lbl"> Security DB: </label></div>
+                            </td>
+                            <td>
+                                <md-select [(ngModel)]="security" name="security">
+                                    <md-option *ngFor="let db of dbList" [value]="db.name">{{db.name}}</md-option>
+                                </md-select>
+                            </td>
+                        </tr>
+
+                        <tr class="set_margn">
+                            <td> 
+                                <div class="select adjustment"><label class="lbl"> Schema DB: </label></div>
+                            </td>
+                            <td>
+                                <md-select [(ngModel)]="schema" name="schema">
+                                    <md-option *ngFor="let db of dbList" [value]="db.name">{{db.name}}</md-option>
+                                </md-select>
+                            </td>
+                        </tr>
+                        <tr class="set_margn">
+                            <td>
+                                <div class="select adjustment"><label class="lbl"> Triggers DB:</label> </div>
+                            </td>
+                            <td>
+                                <md-select [(ngModel)]="trigger" name="trigger">
+                                    <md-option *ngFor="let db of dbList" [value]="db.name">{{db.name}}</md-option>
+                                </md-select>
+                            </td>
+                        </tr>
+
+                        <tr class="set_margn" id="demo" class="collapse">
+                            <td>
+                                <div class="select adjustment"><label class="lbl"> Data Encryption: </label></div>
+                            </td>
+                            <td>
+                                <md-select>
+                                    <md-option *ngFor="let db of dbList" [value]="db.name">{{db.name}}</md-option>
+                                </md-select>
+                            </td>
+                        </tr>
+                        <tr class="set_margn" id="demo1" class="collapse">
+                            <td>
+                                <div class="select adjustment "><label class="lbl"> Encryption Key ID: </label> </div>
+                            </td>
+                            <td><input type="text" [(ngModel)]="dbName" name="name" placeholder="Key ID" style="width: 400px;"></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div class="row alignment">
+                    <div class="col-sm-12 moreless_btn" data-toggle="collapse" data-target="#demo,#demo1" (click)="toggleContent()">{{content}}</div>
+                </div>
+            </div>
+            <div class="move">
+                <a md-button class="cancel_btn" routerLink="/database">Cancel</a>
+                <a md-button class="create_btn" (click)="createData()">Create</a>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,8 @@
+<div class="header">
+    Recents
+</div>
+<ul class="quick-links">
+    <li *ngFor="let link of recents;let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }">
+        {{link.name}}<strong>({{link.objectType}})</strong>
+    </li>
+</ul>

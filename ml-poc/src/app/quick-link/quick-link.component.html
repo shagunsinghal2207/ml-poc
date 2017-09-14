@@ -1,0 +1,8 @@
+<div class="header">
+    Quick Links
+</div>
+<ul class="quick-links">
+    <li *ngFor="let link of links;let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }">
+        <a href="{{link.link}}" target="_blank">{{link.text}}</a>
+    </li>
+</ul>

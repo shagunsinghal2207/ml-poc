@@ -1,0 +1,46 @@
+#wrapper {
+    width: 100vw;
+}
+
+#sidebar-wrapper {
+    background: #333;
+    color: #fff;
+    border-right: 1px solid gray;
+}
+
+#header {
+    background-color: #fff;
+    height: 64px;
+    margin: 0;
+}
+
+#main-wrapper {
+    padding: 15px;
+}
+
+#main-wrapper.squeeze {
+    width: calc(100vw - 176px);
+}
+
+#main-wrapper.normal {
+    width: calc(100vw - 64px);
+}
+
+.footer {
+    text-align: center;
+    background: #fff;
+}
+
+#main {
+    height: calc(100vh - 125px);
+    /*100 + 25*/
+    overflow-y: auto;
+}
+
+.outer {
+    background-color: #F2F0F1;
+}
+
+.navbar {
+    padding: 0px;
+}

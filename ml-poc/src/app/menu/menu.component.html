@@ -1,0 +1,16 @@
+<div id="sidebar" [ngClass]="{'expended': isExpended}">
+    <ul class='nav list-group'>
+        <li>
+            <a (click)="toggle($event)" class="list-group-item">
+                <span *ngIf="!isExpended" class='menu-icon icon-hamburger-menu'></span>
+                <span *ngIf="isExpended" class='menu-icon icon-menuclose'></span>
+            </a>
+        </li>
+        <li *ngFor="let menu of menuList" class="navigation" [ngClass]="getClass(menu)">
+            <a [routerLink]="[menu.url]" class="list-group-item" (click)="setActive(menu)">
+                <span class='menu-icon icon-{{menu.name}}'></span>
+                <span *ngIf="isExpended" class="menu-text">{{menu.text}}</span>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row header">
+        <div class="col-sm-6 ">
+            <div class="title"><i class="icon-attachment"></i>&nbsp;ATTACH FOREST</div>
+        </div>
+        <div class="col-sm-4 "></div>
+        <div class="col-sm-2">
+            <div class="close"><i class="icon-menuclose" (click)="onClose()"></i></div>
+        </div>
+    </div>
+    <div class="row dimensions" *ngIf="notVisible">
+        <div class="col-sm-6 ">
+            <div class="attach-existing" (click)="onClick()">
+                <div class="center-block inner row "><i class="icon-add"></i></div>
+                <div class="row content ">Attach an Existing <span class="attach_margin"> Forest</span></div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="attach-existing" [routerLink]="['/create_forest', selectedDb.id, selectedDb.name]" (click)="onCreate()">
+                <div class="center-block inner row "><i class="icon-add"></i></div>
+                <div class="row content ">Create new Forest <span class="create_margin">and attach</span></div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="visible">
+        <div class="row alignment">
+            <div class="col-sm-11">
+                <md-input-container class="search_box">
+                    <input mdInput placeholder="Search Forest" [(ngModel)]="trainingSearchTerm" (ngModelChange)="filterDb($event)">
+                </md-input-container>
+                <i class="icon-search prefix"></i>
+            </div>
+        </div>
+        <div class="row alignment">
+            <div class="col-sm-12 li_box">
+                <ul class="ul_style">
+                    <li *ngFor="let forest of forestsList| orderBy:'name'">
+                        <md-checkbox [(ngModel)]="forest.selected" (change)="onCheck(forest.id)" class="chckbox"> {{forest.name}}
+                        </md-checkbox><i class="icons icon-attachment" *ngIf="forest.database && forest.database.name" [mdTooltip]="forest.database? forest.database.name: ''"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row div_line ">
+            <div class="col-sm-6">
+                <i class="icons icon-attachment"></i>{{getAttachedForestInfo()}}
+            </div>
+            <div class="col-sm-6">
+                <a md-button class="btn_back bottom" (click)="onBack()">Back</a>
+                <a md-button class="btn_create bottom" (click)="onDone()" data-dismiss="myModal">Done</a>
+            </div>
+        </div>
+    </div>
+</div>

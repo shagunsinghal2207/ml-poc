@@ -1,0 +1,18 @@
+<div class="flex-column outer ">
+    <div id="header" class="navbar navbar-default navbar-fixed-top ">
+        <header></header>
+    </div>
+    <div id="wrapper" class="flex-row">
+        <div id="sidebar-wrapper">
+            <side-menu [menuList]="menuList" (menuToggle)="onMenuToggle($event)"></side-menu>
+        </div>
+        <div id="main-wrapper" [ngClass]="getClassName()">
+            <div id="main">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        Copyright © 2017 MarkLogic Corporation.
+    </div>
+</div>

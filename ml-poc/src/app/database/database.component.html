@@ -1,0 +1,60 @@
+<div class="container-fluid white">
+    <div class="flex-row white">
+        <span class="db"><span class="icon-Database"></span>Databases</span>
+        <md-input-container class="search_box">
+            <input mdInput placeholder="Search database" [(ngModel)]="dbSearchTerm" (ngModelChange)="filterDb($event)">
+        </md-input-container>
+        <i class="icon-search prefix"></i>
+        <div class="container"><a md-raised-button routerLink="/create_database" class="move"><i class="icon-add" ></i>  Create New</a></div>
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="tableHeader">
+        <ngx-datatable class="material tableHeader" [rows]="rows| orderBy:'name'" [columnMode]="'force'" [sortType]="'multi'" [headerHeight]="50" [rowHeight]="'auto'">
+            <ngx-datatable-column name="Database Name">
+                <ng-template let-column="column" ngx-datatable-header-template>
+                    <div class="db_sort">{{column.name}}</div>
+                </ng-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    <div class='col col-name' [ngClass]='getClasses(row.id, row.isAvailable, true)'>{{row.name}}</div>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Related Databases">
+                <ng-template class="tHeader" let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                    <span>{{column.name}}</span>
+                </ng-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    <div class="col" [ngClass]="getClasses(row.id)"> {{stringifyName(row.relatedDatabase)}} </div>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Forests">
+                <ng-template class="tHeader" let-column="column" ngx-datatable-header-template>
+                    {{column.name}}
+                </ng-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    <div class="forest" [ngClass]="getClasses(row.id)"> {{stringifyName(row.forests)}}</div>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="App Servers">
+                <ng-template class="tHeader" let-column="column" ngx-datatable-header-template>
+                    {{column.name}}
+                </ng-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    <div class="col" [ngClass]="getClasses(row.id)"> {{stringifyName(row.appServers)}} </div>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Action">
+                <ng-template class="tHeader" let-column="column" ngx-datatable-header-template>
+                    {{column.name}}
+                </ng-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    <div class="col actions" [ngClass]="getClasses(row.id)">
+                        <span mdTooltip="Edit"><i class="icons icon-edit" md-button (click)="onClick()"></i></span>
+                        <span mdTooltip="Attach Forest"><i class="icons icon-attachment" (click)="openDialog(row)"></i></span>
+                        <span mdTooltip="Configure"><i class="icons icon-configure" (click)="onAction()"></i></span>
+                    </div>
+                </ng-template>
+            </ngx-datatable-column>
+        </ngx-datatable>
+    </div>
+</div>

@@ -1,0 +1,143 @@
+.header{
+    height: 12%;
+    width: 100%;
+    background-color: #6C53AF;
+    -webkit-text-fill-color: white;
+}
+
+.attach-existing{
+    margin-left: 2%;
+    margin-top:20%;
+    width: 90%;
+    height: 60%;
+     outline: 0;
+}
+
+.attach-existing:hover{
+    border: 2px dotted grey;
+    border-radius: 12px;
+    cursor:pointer;
+}
+
+
+.container{
+   width: 500px;
+   height: 350px;
+   margin:0px;
+   padding: 0px;
+}
+.row{
+    padding: 0px;
+     margin:0px;
+ }
+
+.dimensions{
+   height: 88%;
+}
+
+.title{
+   font-family: Helvetica Neue, sans-serif;
+   font-size: 14px;
+   padding: 10px 10px 10px 0px;
+   margin: 0px;
+}
+
+.close{
+ font-size: 14px;
+ margin-top:12px;
+color:white;
+}
+
+.icon-attachment{
+font-size: 18px;
+margin-right: 5px;
+}
+
+.line{
+    border-right: 1px solid #CECECE;
+}
+.inner{
+    padding: 15% 0 0 40%;
+  
+}
+
+.icon-add{
+font-size: 20px;
+border-radius: 50%;
+border: 1px solid #E35F1D;
+padding: 7px;
+color:#E35F1D;
+}
+
+.icon-menuclose{
+    color:white;
+}
+.content{
+   padding:10% 0 0 17%;
+}
+
+.alignment{
+     margin-left:10px;  
+ }
+ .bottom{
+     margin: 8px 5px 5px 5px;
+ 
+ }
+ 
+ .li_box{
+    margin-right: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+ .btn_back{
+     background-color: #CECECE;
+     color: white;
+     font-family: Helvetica Neue, sans-serif;
+     font-weight:bold;
+     text-decoration: none;
+      border-radius: 5px;
+ }
+ 
+ .btn_create{
+    font-family: Helvetica Neue, sans-serif;
+     font-weight:bold;
+      color: white;
+     background-color: #E35F1D;
+     text-decoration: none; 
+      border-radius: 5px;
+ }
+
+ .div_line{
+    padding-top: 0px;
+    border-top: 1px solid #CECECE;
+   
+ }
+
+ .chckbox{
+   padding-left:10px;
+ }
+
+ .ul_style{
+     height:190px; 
+     width:100%; 
+     overflow:auto;
+     margin-bottom:0px;
+     padding:5px;
+ }
+
+ .icon-attachment{
+     margin-left: 5px;
+     color:#C01205;
+     font-size: 14px;
+ }
+
+ .search_box{
+     width:90%;
+ }
+
+ .attach_margin{
+    margin-left:35px;
+ }
+ .create_margin{
+    margin-left:20px;
+ }

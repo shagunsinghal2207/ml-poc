@@ -1,0 +1,12 @@
+<div class="widget-header" *ngIf="data.title">
+    <span class="widget-title">{{data.title}}</span>
+</div>
+<div class="widget-body">
+    <div *ngIf="data.settings.type=='chart'">
+        <app-chart [chartType]="data.title" [cData]="widgetData"></app-chart>
+    </div>
+    <div *ngIf="data.settings.type=='links'" class="flex-column">
+        <recent [data]="widgetData"></recent>
+        <quick-link></quick-link>
+    </div>
+</div>
